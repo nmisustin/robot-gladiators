@@ -3,9 +3,10 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
+var i =0;
 
 var fight = function () {
     //Alert players that they are starting the round
@@ -17,19 +18,19 @@ var fight = function () {
         enemyHealth = enemyHealth - playerAttack;
         //Log a resulting message to the console to indicate it worked
         console.log (
-            playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+            playerName + " attacked " + enemyNames + ". " + enemyNames + " now has " + enemyHealth + " health remaining."
         );
         if (enemyHealth <= 0) {
-            window.alert(enemyName + " has died!");
+            window.alert(enemyNames[i] + " has died!");
         }
         else {
-            window.alert (enemyName + " still has " + enemyHealth + " health left.");
+            window.alert (enemyNames[i] + " still has " + enemyHealth + " health left.");
         }
         //Subtract the value of enemyAttack from the value of playerHealth and update the vlue of playerHealth
         playerHealth = playerHealth - enemyAttack;
         //Log a resulting message to the console to indicate it worked
         console.log(
-            enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining"
+            enemyNames[i] + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining"
         );
         if (playerHealth <= 0){
             window.alert(playerName + " had died!");
@@ -56,4 +57,6 @@ var fight = function () {
         window.alert("You need to choose a valid option. Try again!");
     }
 };
-fight();
+for (var i=0; i < enemyNames.length; i++){
+    fight(enemyNames[i]);
+}
