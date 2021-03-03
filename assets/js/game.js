@@ -1,3 +1,8 @@
+//function generates randome number
+var randomNumber = function(min, max){
+  var value = Math.floor(Math.random()*(max -min + 1)+min);
+  return value;
+}
 var playerInfo = {
   name: window.prompt("What is your robot's name?"),
   health: 100,
@@ -171,11 +176,6 @@ var shop = function(){
       shop();
       break;
   }
-}
-//function generates randome number
-var randomNumber = function(min, max){
-  var value = Math.floor(Math.random()*(max -min + 1)+min);
-  return value;
 }
 //start the game when the page loads
 startGame ();
